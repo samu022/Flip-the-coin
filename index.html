@@ -56,6 +56,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-top: 20px;
 
       }
       .button-action h5{
@@ -64,7 +65,7 @@
         margin-top: 15px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-bottom: 25px;
-        margin-left: 12px;
+        text-align: center;
       }
       .button-action button{
         background-color: #005BD6;
@@ -74,6 +75,13 @@
         border-radius: 8px;
         cursor:pointer;
         box-shadow: 0px 3px 0px 0px #002B66;
+      }
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      button:active {
+        transform: scale(0.95);
       }
 
     </style>
@@ -93,12 +101,8 @@
       <h3>Press the coin or the button to flip the coin</h3>
     </div>
     <div class="imagenes">
-      <div class="imagen-head">
-        <img src="./resources/heads.svg" alt="heads">
-        <br>
-      </div>
-      <div class="imagen-tail">
-        <img src="./resources/tails.svg" alt="heads">
+      <div class="imagen-coin">
+        <img src="./resources/heads.svg" alt="Imagen head">
         <br>
       </div>
       <div class="shadow">
@@ -107,7 +111,7 @@
       
       
       <div class="button-action">
-        <h5>Moneda</h5>
+        <h5>Heads</h5>
         <button type="button">RANDOM</button>
       </div>
     </div>
@@ -117,5 +121,27 @@
         >devChallenges.io</a
       >.
     </div>
+    <script>
+      const button = document.querySelector('.button-action');
+      button.addEventListener("click", function(){
+          const result = Math.random() < 0.5 ? "Heads" : "Tails";
+          
+          let img_element = document.querySelector(".imagen-coin img");
+          let texto=document.querySelector(".button-action h5");
+          if(result=="Heads"){
+            img_element.src="./resources/heads.svg";
+            img_element.alt="Imagen head moneda";
+            texto.innerHTML="Heads";
+          }else{
+            img_element.src="./resources/tails.svg";
+            img_element.alt="Imagen tail moneda";
+            texto.innerHTML="Tails";
+          }
+          
+          
+          
+        }
+      );
+    </script>
   </body>
 </html>
