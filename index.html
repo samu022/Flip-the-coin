@@ -15,18 +15,22 @@
 
     <!--You are welcome to delete these styles or modify them in your own stylesheet -->
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
       body {
-        height: 100vh;
-        background-color:  #4B3E8A;
+        margin: 0px;
+        font-family: sans-serif;
 
       }
-
+      .app{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #4B3E8A;
+      }
+      .card {
+        text-align: center;
+      }
       .author-info {
         font-size: 14px;
         text-align: center;
@@ -42,14 +46,13 @@
         text-align: center;
       }
       .title h1{
-        -webkit-text-stroke: 5px #35383f;
+        font-size: 50px;
+        -webkit-text-stroke: 2px #35383f;
         text-shadow: 2px 2px 0px #35383f;
-        font-size: 100px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+     
       }
       .title h3{
-        margin-top: 15px;
+        margin-top: 10px;
       }
       .imagenes {
         display: flex;
@@ -87,40 +90,36 @@
     </style>
   </head>
   <body>
-    <!-- 
-
-    Flip a Coin Game
-    Press the coin or the button to flip the coin
-    Head
-    Tail
-    Random
-  
-    -->
-    <div class="title">
-      <h1>Flip the coin</h1>
-      <h3>Press the coin or the button to flip the coin</h3>
-    </div>
-    <div class="imagenes">
-      <div class="imagen-coin">
-        <img src="./resources/heads.svg" alt="Imagen head">
-        <br>
+    <div class="app">
+      <div class="card">
+        <div class="title">
+          <h1>Flip the coin</h1>
+          <h3>Press the coin or the button to flip the coin</h3>
+        </div>
+        <div class="imagenes">
+          <div class="imagen-coin">
+            <img src="./resources/heads.svg" alt="Imagen head">
+            <br>
+          </div>
+          <div class="shadow">
+            <img src="./resources/shadow.svg" alt="heads">
+          </div>
+          
+          
+          <div class="button-action">
+            <h5>Heads</h5>
+            <button type="button">RANDOM</button>
+          </div>
+        </div>
+        <div class="author-info">
+          Coded by <a href="#">Samuel Alegre</a> | Challenge by
+          <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+            >devChallenges.io</a
+          >.
+        </div>
       </div>
-      <div class="shadow">
-        <img src="./resources/shadow.svg" alt="heads">
-      </div>
-      
-      
-      <div class="button-action">
-        <h5>Heads</h5>
-        <button type="button">RANDOM</button>
-      </div>
     </div>
-    <div class="author-info">
-      Coded by <a href="#">Samuel Alegre</a> | Challenge by
-      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
-        >devChallenges.io</a
-      >.
-    </div>
+    
     <script>
       const button = document.querySelector('.button-action');
       button.addEventListener("click", function(){
